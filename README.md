@@ -75,4 +75,8 @@ O coração do projeto utiliza tecnologias de padrão industrial adaptadas para 
 O GrammatikLint aspira tornar-se uma ferramenta padrão em escolas públicas de todo o país, servindo como um "professor assistente" digital que nunca se cansa, nunca julga e está sempre pronto para ensinar com clareza e paciência.
 
 ---
+
+## POSSIVEIS MELHORIAS
+--  TRANSFORMAR EM APLICATIVO MOBILE 
+
 Desenvolvido com ❤️ para a educação brasileira.
