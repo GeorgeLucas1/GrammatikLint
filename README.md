@@ -104,9 +104,6 @@ As melhorias técnicas visam otimizar a arquitetura, a performance e a manutenib
 | **Configuração** | **Gerenciamento de Configurações** | Utilizar variáveis de ambiente ou um arquivo de configuração (`.env`, `config.ini`) para parâmetros como o caminho do banco de dados ou configurações do spaCy. | Facilita a configuração e adaptação do sistema para diferentes ambientes sem alterar o código-fonte. |
 | **Logging** | **Sistema de Logging Robusto** | Implementar um sistema de logging adequado para registrar eventos, erros e informações de depuração, auxiliando na identificação e resolução de problemas. | Melhora a capacidade de monitoramento e depuração do sistema em produção. |
 
-## 🎯 Próximos Passos
-
-Recomenda-se priorizar as melhorias que oferecem o maior impacto pedagógico e técnico, considerando os recursos disponíveis. A implementação de testes automatizados e a refatoração do backend são passos cruciais para garantir a sustentabilidade e a escalabilidade do projeto a longo prazo.
 
 
 Desenvolvido com ❤️ para a educação brasileira.
