@@ -78,10 +78,6 @@ O GrammatikLint aspira tornar-se uma ferramenta padrão em escolas públicas de 
 
 ---
 
-# Sugestões de Melhoria para o GrammatikLint
-
-Com base na análise do código-fonte e dos objetivos do projeto GrammatikLint, foram identificadas diversas oportunidades para aprimorar tanto a sua robustez técnica quanto a sua eficácia funcional, visando o seu potencial como política pública educacional.
-
 ## 🚀 Melhorias Funcionais
 
 As melhorias funcionais focam em enriquecer a experiência do usuário e expandir o impacto pedagógico do GrammatikLint.
