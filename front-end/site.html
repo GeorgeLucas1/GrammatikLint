@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrammatikLint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wall">
+
+  <div class="board-wrap">
+    <div class="decorations">📐✏️📏</div>
+    <div class="board-title">GrammatikLint</div>
+    <div class="board-subtitle">✦ Corretor gramatical para educação infanto-juvenil ✦</div>
+    <div class="chalk-tray">
+      <div class="chalk-piece" style="width:38px;background:#f4f1e8"></div>
+      <div class="chalk-piece" style="width:28px;background:#f9c74f"></div>
+      <div class="chalk-piece" style="width:22px;background:#f8a9a9"></div>
+      <div class="chalk-piece" style="width:32px;background:#a8d8a8"></div>
+    </div>
+  </div>
+
+  <div class="notebook">
+    <div class="notebook-rings">
+      <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+      <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+      <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+      <div class="ring"></div><div class="ring"></div>
+    </div>
+    <div class="notebook-body">
+      <div class="red-margin"></div>
+      <div class="notebook-content">
+        <div class="field-label">✏️ Digite seu texto aqui:</div>
+        <textarea id="texto" placeholder="Escreva uma frase ou parágrafo para corrigir..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions-bar">
+    <button id="btn">
+      <span id="btn-icon">🔍</span>
+      <span id="btn-text">Analisar</span>
+    </button>
+    <button id="btn-mic">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <rect x="9" y="2" width="6" height="11" rx="3" stroke="currentColor" stroke-width="2"/>
+        <path d="M5 10c0 3.87 3.13 7 7 7s7-3.13 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="9" y1="21" x2="15" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Falar
+    </button>
+    <span id="total"></span>
+    <span id="score"></span>
+  </div>
+
+  <div id="mic-status"></div>
+  <div id="results-title"></div>
+  <div id="erros"></div>
+
+</div>
+
+<button id="owl-btn">
+  <span style="font-size:2rem">🦉</span>
+  <span class="owl-label">Clique aqui!<br><small>Sobre o projeto</small></span>
+</button>
+
+<div id="modal-overlay">
+  <div class="modal-box">
+    <button id="modal-close">✕</button>
+
+    <div class="modal-header">
+      <span style="font-size:2.5rem">🦉</span>
+      <div>
+        <div class="modal-title">GrammatikLint</div>
+        <div class="modal-tagline">Uma ideia para facilitar a educação infanto-juvenil</div>
+      </div>
+    </div>
+
+    <div class="modal-intro">
+      Este projeto nasceu com um propósito simples: tornar o aprendizado do português mais acessível, divertido e eficaz para crianças e jovens.
+    </div>
+
+    <div class="modal-cards">
+      <div class="mcard mcard-red"><span class="mcard-icon">📚</span><div><div class="mcard-title">Gramática e Regras</div><div class="mcard-text">A grande quantidade de normas e suas muitas exceções exigem dedicação constante no estudo.</div></div></div>
+      <div class="mcard mcard-blue"><span class="mcard-icon">🔤</span><div><div class="mcard-title">Conjugações Verbais</div><div class="mcard-text">O idioma possui uma vasta gama de tempos e modos verbais, como o uso intenso do subjuntivo.</div></div></div>
+      <div class="mcard mcard-green"><span class="mcard-icon">🔊</span><div><div class="mcard-title">Sons e Fonética</div><div class="mcard-text">Sons nasais e dígrafos como "lh" e "nh" são difíceis para aprendizes e estrangeiros.</div></div></div>
+      <div class="mcard mcard-yellow"><span class="mcard-icon">💬</span><div><div class="mcard-title">Fala × Escrita</div><div class="mcard-text">A norma culta escrita difere bastante da língua falada coloquialmente no Brasil e em Portugal.</div></div></div>
+    </div>
+
+    <div class="modal-section-title">📊 Analfabetismo no Brasil — IBGE 2024</div>
+    <div class="kpi-grid">
+      <div class="kpi kpi-red"><div class="kpi-num">9,1M</div><div class="kpi-desc">analfabetos<br>15+ anos</div></div>
+      <div class="kpi kpi-orange"><div class="kpi-num">5,3%</div><div class="kpi-desc">taxa nacional<br>menor histórico</div></div>
+      <div class="kpi kpi-purple"><div class="kpi-num">30%</div><div class="kpi-desc">analfabetos<br>funcionais</div></div>
+      <div class="kpi kpi-blue"><div class="kpi-num">2×</div><div class="kpi-desc">pretos/pardos<br>vs brancos</div></div>
+    </div>
+
+    <div class="modal-section-title">🗺️ Taxa por região</div>
+    <div class="region-bars">
+      <div class="rbar"><div class="rbar-lbl">Nordeste</div><div class="rbar-track"><div class="rbar-fill" style="width:100%;background:#e74c3c"></div></div><span class="rbar-pct" style="color:#922b21">11,1%</span></div>
+      <div class="rbar"><div class="rbar-lbl">Norte</div><div class="rbar-track"><div class="rbar-fill" style="width:54%;background:#e67e22"></div></div><span class="rbar-pct" style="color:#784212">6,0%</span></div>
+      <div class="rbar"><div class="rbar-lbl">Centro-Oeste</div><div class="rbar-track"><div class="rbar-fill" style="width:30%;background:#f1c40f"></div></div><span class="rbar-pct" style="color:#7d6608">3,3%</span></div>
+      <div class="rbar"><div class="rbar-lbl">Sudeste</div><div class="rbar-track"><div class="rbar-fill" style="width:25%;background:#27ae60"></div></div><span class="rbar-pct" style="color:#1a5e38">2,8%</span></div>
+      <div class="rbar"><div class="rbar-lbl">Sul</div><div class="rbar-track"><div class="rbar-fill" style="width:24%;background:#27ae60"></div></div><span class="rbar-pct" style="color:#1a5e38">2,7%</span></div>
+    </div>
+
+    <div class="modal-section-title">😔 Destaques por estado</div>
+    <div class="state-badges">
+      <span class="sbadge sbad">🔴 Alagoas 14,3%</span>
+      <span class="sbadge sbad">🔴 Piauí 13,8%</span>
+      <span class="sbadge sgood">🟢 Dist. Federal 1,8%</span>
+      <span class="sbadge sgood">🟢 Santa Catarina 1,9%</span>
+    </div>
+
+    <div class="modal-footer">
+      ✨ O GrammatikLint quer ser uma ferramenta federal de apoio à alfabetização e ao letramento pleno de crianças e jovens em todo o Brasil.
+    </div>
+  </div>
+</div>
+
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+<script src="script.js"></script>
+</body>
+</html>
