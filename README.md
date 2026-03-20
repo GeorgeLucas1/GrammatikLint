@@ -1,6 +1,8 @@
 # 🦉 GrammatikLint
 
 **GrammatikLint** é um corretor gramatical inteligente e acessível, desenvolvido especificamente para apoiar a alfabetização e o letramento de crianças e jovens no Brasil. O projeto combina tecnologia de ponta em Processamento de Linguagem Natural (NLP) com uma interface lúdica e inclusiva para transformar o aprendizado da língua portuguesa em uma experiência interativa.
+<img width="1879" height="909" alt="image" src="https://github.com/user-attachments/assets/faa0a5af-cb18-424d-bb5e-19f5ac288e56" />
+<img width="1338" height="897" alt="image" src="https://github.com/user-attachments/assets/d8daa052-7a0f-44e2-873b-122cec1d60ed" />
 
 ---
 
