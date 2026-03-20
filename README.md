@@ -76,7 +76,39 @@ O GrammatikLint aspira tornar-se uma ferramenta padrão em escolas públicas de 
 
 ---
 
-## POSSIVEIS MELHORIAS
---  TRANSFORMAR EM APLICATIVO MOBILE 
+# Sugestões de Melhoria para o GrammatikLint
+
+Com base na análise do código-fonte e dos objetivos do projeto GrammatikLint, foram identificadas diversas oportunidades para aprimorar tanto a sua robustez técnica quanto a sua eficácia funcional, visando o seu potencial como política pública educacional.
+
+## 🚀 Melhorias Funcionais
+
+As melhorias funcionais focam em enriquecer a experiência do usuário e expandir o impacto pedagógico do GrammatikLint.
+
+| Categoria | Sugestão de Melhoria | Descrição Detalhada | Impacto Pedagógico |
+| :--- | :--- | :--- | :--- |
+| **Feedback Pedagógico** | **Explicações Detalhadas dos Erros** | Além de sugerir a correção, a ferramenta poderia explicar *por que* a frase está incorreta, utilizando exemplos e regras gramaticais simplificadas. Isso transformaria a correção em uma oportunidade de aprendizado ativo. | Aprofunda a compreensão das regras gramaticais, promovendo o aprendizado autônomo e a retenção do conhecimento. |
+| **Personalização** | **Dicionário e Regras Personalizáveis** | Permitir que professores ou administradores adicionem palavras (nomes próprios, termos regionais) ou criem/ajustem regras gramaticais específicas para as necessidades de suas turmas ou regiões. | Adapta a ferramenta a diferentes contextos educacionais e culturais, tornando-a mais relevante e precisa para cada usuário. |
+| **Acompanhamento** | **Relatórios de Progresso do Aluno** | Desenvolver uma interface para visualizar o histórico de análises de um aluno, identificando padrões de erros, evolução do score de qualidade e áreas que necessitam de mais atenção. | Permite que professores e pais acompanhem o desenvolvimento do aluno, personalizem o ensino e intervenham proativamente. |
+| **Engajamento** | **Gamificação Avançada** | Expandir o sistema de "score de qualidade" com elementos de gamificação, como conquistas, níveis, desafios e recompensas virtuais, para motivar o uso contínuo e o aprimoramento. | Aumenta o engajamento e a motivação dos alunos, tornando o aprendizado mais divertido e menos intimidante. |
+| **Inclusão** | **Acessibilidade Visual Aprimorada** | Além do suporte a Libras, implementar opções para pessoas com baixa visão (aumento de contraste, fontes de alta legibilidade) e dislexia (fontes específicas, espaçamento ajustável). | Garante que a ferramenta seja verdadeiramente inclusiva para um espectro ainda maior de necessidades educacionais especiais. |
+| **Integração** | **Integração com LMS** | Possibilitar a integração do GrammatikLint com plataformas de gestão de aprendizagem (LMS) populares, permitindo o compartilhamento de resultados e atividades. | Facilita a adoção em ambientes escolares já estabelecidos e otimiza o fluxo de trabalho de professores. |
+
+## ⚙️ Melhorias Técnicas
+
+As melhorias técnicas visam otimizar a arquitetura, a performance e a manutenibilidade do sistema, garantindo sua escalabilidade e confiabilidade.
+
+| Categoria | Sugestão de Melhoria | Descrição Detalhada | Benefício |
+| :--- | :--- | :--- | :--- |
+| **Arquitetura** | **Refatoração do Backend** | Separar claramente as responsabilidades entre os módulos. O `nlp.py` e `rules.py` devem ser bibliotecas de funções puras, enquanto `main.py` deve ser o ponto de entrada da API, orquestrando as chamadas. | Melhora a modularidade, testabilidade e manutenibilidade do código, facilitando futuras expansões. |
+| **Testes** | **Implementação de Testes Automatizados** | Desenvolver testes unitários para as funções de análise (`nlp.py`, `rules.py`) e testes de integração para as rotas da API (`main.py`). | Garante a correção do código, previne regressões e facilita a introdução de novas funcionalidades com confiança. |
+| **Implantação** | **Dockerização Completa** | Finalizar e otimizar o `docker-compose.yml` para incluir o backend (FastAPI) e, opcionalmente, servir o frontend estático. Isso padroniza o ambiente de execução. | Simplifica a implantação em diferentes ambientes (escolas, servidores), garantindo consistência e reduzindo problemas de configuração. |
+| **Performance** | **Otimização do Processamento de Texto** | Para textos muito longos, explorar técnicas como processamento em lote, cache de resultados ou a utilização de modelos spaCy mais leves, se aplicável, para manter a responsividade. | Garante uma experiência de usuário fluida, mesmo com grandes volumes de texto, essencial para uso em sala de aula. |
+| **Configuração** | **Gerenciamento de Configurações** | Utilizar variáveis de ambiente ou um arquivo de configuração (`.env`, `config.ini`) para parâmetros como o caminho do banco de dados ou configurações do spaCy. | Facilita a configuração e adaptação do sistema para diferentes ambientes sem alterar o código-fonte. |
+| **Logging** | **Sistema de Logging Robusto** | Implementar um sistema de logging adequado para registrar eventos, erros e informações de depuração, auxiliando na identificação e resolução de problemas. | Melhora a capacidade de monitoramento e depuração do sistema em produção. |
+
+## 🎯 Próximos Passos
+
+Recomenda-se priorizar as melhorias que oferecem o maior impacto pedagógico e técnico, considerando os recursos disponíveis. A implementação de testes automatizados e a refatoração do backend são passos cruciais para garantir a sustentabilidade e a escalabilidade do projeto a longo prazo.
+
 
 Desenvolvido com ❤️ para a educação brasileira.
